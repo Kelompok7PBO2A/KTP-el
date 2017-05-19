@@ -4,11 +4,11 @@
 package projectkel7;
 import java.util.ArrayList;
 import javax.swing.RowFilter;
-
+import javax.swing.RowSorter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import javax.swing.table.DefaultTableModel;
-
+import java.util.HashMap;
 
 public class design extends javax.swing.JFrame {
     ArrayList<Data> KelART1 = new ArrayList<>();
@@ -27,10 +27,13 @@ DefaultTableModel dm;
         setTitle("Program e-KTP");
         initComponents();
         BuatKolom();
-      
+        sort();
     }
     
-
+    public void sort(){
+    TableRowSorter<DefaultTableModel> sorter = new TableRowSorter<DefaultTableModel>(dm);
+    Tabel.setRowSorter(sorter);
+    }
     
      private void search (String query){
         TableRowSorter<DefaultTableModel> tabr=new TableRowSorter<DefaultTableModel>(dm);
@@ -427,7 +430,7 @@ DefaultTableModel dm;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-   
+    HashMap<String,String> Hashmap1 = new HashMap<String,String>();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       Data data = new Data();
@@ -447,7 +450,9 @@ DefaultTableModel dm;
               data.setKelurahan("A");
               data.setRt("1");
           KelART1.add(data);
-          
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelART1){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan A", "RT1",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                 int i=0;
@@ -460,7 +465,9 @@ DefaultTableModel dm;
               data.setKelurahan("A");
               data.setRt("2");
           KelART2.add(data);
-         
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelART2){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan A", "RT2",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                 int i=0;
@@ -472,7 +479,9 @@ DefaultTableModel dm;
               data.setKelurahan("A");
               data.setRt("3");
           KelART3.add(data);
-         
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelART3){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan A", "RT3",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                     int i=0;
@@ -484,7 +493,9 @@ DefaultTableModel dm;
               data.setKelurahan("A");
               data.setRt("4");
           KelART4.add(data);
-          
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelART4){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan A", "RT4",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                     int i=0;
@@ -498,7 +509,9 @@ DefaultTableModel dm;
               data.setKelurahan("B");
               data.setRt("1");
           KelBRT1.add(data);
-         
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelBRT1){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan B", "RT1",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                     int i=0;
@@ -510,7 +523,9 @@ DefaultTableModel dm;
               data.setKelurahan("B");
               data.setRt("2");
           KelBRT2.add(data);
-          
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelBRT2){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan B", "RT2",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                     int i=0;
@@ -522,7 +537,9 @@ DefaultTableModel dm;
               data.setKelurahan("B");
               data.setRt("3");
           KelBRT3.add(data);
-          
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelBRT3){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan B", "RT3",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                     int i=0;
@@ -534,7 +551,9 @@ DefaultTableModel dm;
               data.setKelurahan("B");
               data.setRt("4");
           KelBRT4.add(data);
-         
+          Hashmap1.put(data.getNik(),data.getNik()+data.getNama()+data.getTtl()+data.getJeniskelamin()
+                  +data.getGoldarah()+data.getAlamat()+data.getAgama()+data.getStatusperkawinan()+data.getPekerjaan()
+                  +data.getKewarganegaraan()+data.getBerlakuhingga());
           for (Data isi :KelBRT4){
                     datakolom(isi.getNik(), isi.getNama(),isi.getTtl(), isi.getJeniskelamin(), isi.getGoldarah(), isi.getAlamat(), "Kelurahan B", "RT4",isi.getAgama(), isi.getStatusperkawinan(), isi.getPekerjaan(),isi.getKewarganegaraan(),isi.getBerlakuhingga());
                     int i=0;
